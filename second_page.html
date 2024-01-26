@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('asd.gif');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            font-family: Monospace, sans-serif;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #title {
+            font-size: 28px;
+        }
+        #smallerText {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 10px;
+            border: none;
+            font-weight: bold;
+        }
+        #yesBtn {
+            background-color: green;
+            color: black;
+        }
+        #noBtn {
+            background-color: red;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="title">Ms. Jansaya, will you go out with me?</div>
+        <div id="smallerText">Date: 13 February. Time: 19:00, or when you can. Just tell me...</div>
+        <div id="buttons">
+            <button id="yesBtn" class="btn" onclick="location.href='https://wa.me/77077121585?text=Yes%2C%20i%20will'">Yes</button>
+            <button id="noBtn" class="btn" onclick="handleNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        let attempts = 0;
+
+        function handleNo() {
+            attempts++;
+            if (attempts >= 4) {
+                document.getElementById('noBtn').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
